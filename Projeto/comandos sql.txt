@@ -1,0 +1,19 @@
+create table usuarios(
+    id serial,
+    email varchar(40),
+    senha varchar(40)
+    )
+
+insert into usuarios(email,senha) values ('carol@hotmail.com', 'carol');
+insert into usuarios(email,senha) values ('andreloponte@gmail.com', 'andreloponte');
+insert into usuarios(email,senha) values ('aabrl@cin.ufpe.br', 'andreloponte');
+insert into usuarios(email,senha) values ('profbruno@cac.ufpe.br', 'bruno123');
+insert into usuarios(email,senha) values ('lugatinha16@hotmail.com', 'lu2017');
+insert into usuarios(email,senha) values ('rgomesbass@hotmail.com', '2584');
+insert into usuarios(email,senha) values ('ricardoalves@ig.com.br', '1478');
+insert into usuarios(email,senha) values ('rhcp@hotmail.com', '1589');
+insert into usuarios(email,senha) values ('lucas@hotmail.com', 'lucas.2011');
+insert into usuarios(email,senha) values ('mauricio@cac.ufpe.br', 'mauriufpe');
+insert into usuarios(email,senha) values ('eduardo2017@gmail.com', 'eduardo123')
+
+select * from usuarios
