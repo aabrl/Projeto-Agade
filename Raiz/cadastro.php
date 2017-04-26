@@ -10,17 +10,27 @@
 			    $("button").click(function()
 			    {
 			    	var data = {nome: "Andre Loponte", cidade: "Recife"};
-   				    $.post("teste.php", data, post_success).error(post_error);
+   				    $.post("teste.php", data, post_done, "json").fail(post_fail);
 			    });
 			});
 
 						
-			function post_success(data)
+			function post_done(data)
 			{
-			 	alert("Success: " + data);
+//			    console.log(data);
+//			    console.log(data.objetos);
+//			    console.log(data["objetos"]);
+//			    console.log(data.objetos[0].Nome);
+			    var s = "<table border=1><tr><th>NOME</th><th>CIDADE</th></tr>";
+			    for (var i = 0; i < data.objetos.length; i++)
+			    {
+			    	s += "<tr><td>"+data.objetos[i].nome+"</td><td>"+data.objetos[i].cidade+"</td></tr>";
+			    }
+			    s +="</table>";
+			    $("#tabela").html(s);
 			}
 
-			function post_error(data)
+			function post_fail(data)
 			{
 			 	alert("Error: " + data);
 			}
