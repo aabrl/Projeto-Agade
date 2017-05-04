@@ -7,20 +7,24 @@
 		<script>
 			$(document).on('click',"#botao",function()
 			{
-				var data = {email:$("#email").val()};
+				var data = {email:$("#email").val(),senha:$("#senha").val()};
 				console.log(data);
-				console.log(data['email'])
-				if (data['email'].length > 0)
+				console.log(data['email']);
+				console.log(data['senha']);
+				if (data['senha'].length > 0)
 				{
-					$.post("excluir.php", data, post_done, "json").fail(post_fail);
+					$.post("editar.php", data, post_done, "json").fail(post_fail);
 					$("#email").val("");
+					$("#senha").val("");
 				}
 				else
-	   				alert("Preencha os campos corretamente.");
+	   				alert("A senha não pode ficar em branco.");
 			});
 			$(document).on('click',"#botao2",function()
 			{
 			    var data = {email:$("#email").val()};
+			    console.log(data);
+				console.log(data['email']);
    				$.post("listar.php", data, post_done1, "json").fail(post_fail);
 			});
 					
@@ -51,10 +55,10 @@
 		</script>
 	</head>
 	<body>
-		<h1><a href="admin.php">Exclusão de Usuários</a></h1>
-		<p><label>Email</label>
-		<input type="text" name="email" id="email" /></p>
-		<p><button id="botao">Excluir</button><button id="botao2">Listar</button></p>
+		<h1><a href="admin.php">Edição de Usuários</a></h1>
+		<p><label>Email</label><input type="text" name="email" id="email" /></p>
+		<p><label>Nova Senha</label><input type="text" name="senha" id="senha" /></p>
+		<p><button id="botao">Editar</button><button id="botao2">Listar</button></p>
 		<div id="tabela"></div>
 	</body>
 </html>

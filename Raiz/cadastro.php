@@ -5,33 +5,30 @@
 		<script src="javascript/jquery-3.2.1.js"></script>
 
 		<script>
-			$(document).ready(function()
+			$(document).on('click',"#botao",function()
 			{
-			    $("button").click(function()
-			    {
-			    	var data = {nome: "Andre Loponte", cidade: "Recife"};
-   				    $.post("teste.php", data, post_done, "json").fail(post_fail);
-			    });
+				var data = {email:$("#email").val(),senha:$("#senha").val()};
+				console.log(data);
+				console.log(data['email'])
+				if (data['email'].length > 0)
+				{
+					$.post("cadastrar.php", data, post_done, "json").fail(post_fail);
+					$("#email").val("");
+					$("#senha").val("");
+				}
+				else
+	   				alert("Preencha os campos corretamente.");
 			});
-
-						
+					
 			function post_done(data)
 			{
-//			    console.log(data);
-//			    console.log(data.objetos);
-//			    console.log(data["objetos"]);
-//			    console.log(data.objetos[0].Nome);
-			    var s = "<table border=1><tr><th>NOME</th><th>CIDADE</th></tr>";
-			    for (var i = 0; i < data.objetos.length; i++)
-			    {
-			    	s += "<tr><td>"+data.objetos[i].nome+"</td><td>"+data.objetos[i].cidade+"</td></tr>";
-			    }
-			    s +="</table>";
-			    $("#tabela").html(s);
+			    console.log(data);
+			    alert(data);
 			}
 
 			function post_fail(data)
 			{
+				console.log(data);
 			 	alert("Error: " + data);
 			}
 		</script>
@@ -39,15 +36,11 @@
 	
 	<body>
 		<h1><a href="admin.php">Cadastro de Usuários</a></h1>
-		<!--form id="form1" name="form1" method="post">
-		  <p><label for="Email">Email</label>
-		  <input type="text" name="email" id="email" />
-		  <span class="msgerro"></span></p>
-		  <p><label for="Senha">Senha</label>
-		  <input type="password" name="senha" id="senha" /></p>
-		  <input type="submit" name="button" id="button" value="Cadastrar" />
-		</form-->
-		<button>TESTE</button>
+		<p><label>Email</label>
+		<input type="text" name="email" id="email" /></p>
+		<p><label>Senha</label>
+		<input type="password" name="senha" id="senha" /></p>
+		<p><button id="botao">Cadastrar</button></p>
 		<div id="tabela"></div>
 	</body>
 </html>

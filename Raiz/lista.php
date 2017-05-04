@@ -5,16 +5,12 @@
 		<script src="javascript/jquery-3.2.1.js"></script>
 
 		<script>
-			$(document).ready(function()
+			$(document).on('click',"#botao",function()
 			{
-				$("#botao").click(function()
-			    {
-			    	var data = $('#email');
-   				    $.post("listar.php", data, post_done, "json").fail(post_fail);
-			    });
+			    var data = $("#email").val();
+   				$.post("listar.php", {email:data}, post_done, "json").fail(post_fail);
 			});
-
-						
+					
 			function post_done(data)
 			{
 			    console.log(data);
@@ -38,11 +34,8 @@
 	</head>
 	<body>
 		<h1><a href="admin.php">Listar Usuários</a></h1>
-		<form id="form1" name="form1" method="post">
-		  <p><label for="Email">Email</label>
-		  <input type="text" name="email" id="email" /></p>
-		  <input type="submit" name="botao" id="botao" value="Listar" />
-		</form>
+		<label>Email</label><input type="text" id="email" name="email"/>
+		<button id="botao" name="botao1">Listar</button>
 		<div id="tabela"></div>
 	</body>
 </html>

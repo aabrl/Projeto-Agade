@@ -13,9 +13,9 @@
 		}
 		if ($a > 0)
 		{
-			$query2 = "DELETE FROM usuarios WHERE email = '$email'";
+			$query2 = "UPDATE usuarios SET senha = '$senha' WHERE email = '$email'";
 			$resultado = pg_query($query2) or die('Query failed: ' . pg_last_error());
-			$resposta = "Email ".$email." excluido com sucesso!";
+			$resposta = "A senha para ".$email." foi editada com sucesso!";
 			echo json_encode($resposta, JSON_NUMERIC_CHECK);
 		}
 		else
