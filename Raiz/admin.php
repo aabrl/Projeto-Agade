@@ -10,18 +10,12 @@
     	$(function() {
         	$( "#barra" ).buttonset();
     	});
-/*    	$(function() {
-       		$("input[type=submit], a, button").button();
-    	});
-*/
     </script>
 	<body>
 		<h1 font-face = "Arial">Administração</h1>
 		<div id="barra">
-	 		<a href="cadastro.php">Cadastrar</a>
-	 		<a href="exclusao.php">Excluir</a>
-	 		<a href="edicao.php">Editar</a>
-	 		<a href="lista.php">Listar</a>
+	 		<a href="cadastro.php">Novo Cadastro</a>
+	 		<a href="perfil.php">Visualizar Cadastros</a>
 	 	</div>
 	</body>
 </html>
