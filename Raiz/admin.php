@@ -15,7 +15,7 @@
 		<h1 font-face = "Arial">Administração</h1>
 		<div id="barra">
 	 		<a href="cadastro.php">Novo Cadastro</a>
-	 		<a href="perfil.php">Visualizar Cadastros</a>
+	 		<a href="lista.php">Visualizar Cadastros</a>
 	 	</div>
 	</body>
 </html>

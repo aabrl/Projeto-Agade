@@ -48,9 +48,9 @@ function FileFrame(fileArea, fileTitle) {
     // enviar os arquivos via ajax.
     // Irei deixar um exemplo, qualquer dúvida eu peço
     // que utilize o sistema de comentários do site.
-    /*
+    
     self.sendFile(self.file);
-    */
+    
   };
 
   // Esse método irá ler o arquivo na memória,
