@@ -1,16 +1,29 @@
 <?php
 	include "config.php";
+	session_start();
 	extract($_POST);
+	$nomefoto = $_SESSION['nomefoto'];
+	$localfoto = $_SESSION['localfoto'];
 
 	if (isset($email))
 	{   
 		#Insere a foto DENTRO do banco de dados
 		#$query = "INSERT INTO usuarios(nome,email,senha,foto) VALUES ('$nome', '$email', '$senha',lo_import('C:/wamp64/www/Site/Raiz/uploads/foto.jpg'))";
 		#Insere apenas o caminho da foto no banco de dados
-		$query = "INSERT INTO usuarios(nome,email,senha) VALUES ('$nome', '$email', '$senha')";
-		$resultado = pg_query($query) or die('Query failed: ' . pg_last_error());
-		$pg_close = ($link);
-		$ok = "Usuário ".$nome." cadastrado com sucesso!";
+		$senha = $_POST['senha'];
+		$senhaCript = md5($senha);
+		#INSERINDO CADASTRO NO BD
+		$insere = "INSERT INTO usuarios(nome,email,senha) VALUES ('$nome', '$email', '$senhaCript')";
+		$resultado = pg_query($insere) or die('Query failed: ' . pg_last_error());
+		#RECUPERANDO ID PRA RENOMEAR A FOTO
+		$pesquisaid = "SELECT id FROM usuarios WHERE email = '$email'";
+		$resultado = pg_query($pesquisaid) or die('Query failed: ' . pg_last_error());
+		while ($linha = pg_fetch_array($resultado)) {
+			$id = $linha['id'];
+		}
+		pg_close($link);
+		rename($localfoto.$nomefoto, $localfoto.$id.".jpg");
+		$ok = "Usuário ".$nome." cadastrado com sucesso! O arquivo ".$nomefoto." foi enviado com sucesso para o diretório ".$localfoto."!";
 		echo json_encode($ok, JSON_NUMERIC_CHECK);
 	}
 ?>

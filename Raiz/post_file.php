@@ -1,5 +1,7 @@
 <?php
 
+#PASSAR A LOCALIZAÇÃO E O NOME DO ARQUIVO DE UPLOAD VIA SESSÃO
+session_start();
 // If you want to ignore the uploaded files, 
 // set $demo_mode to true;
 
@@ -36,6 +38,8 @@ if(array_key_exists('pic',$_FILES) && $_FILES['pic']['error'] == 0 ){
 	// directory to the uploads folder:
 	
 	if(move_uploaded_file($pic['tmp_name'], $upload_dir.$pic['name'])){
+		$_SESSION['nomefoto'] = $pic['name'];
+		$_SESSION['localfoto'] = $upload_dir;
 		exit_status('Upload de arquivos realizado com sucesso.');
 	}
 	

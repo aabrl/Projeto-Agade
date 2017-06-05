@@ -33,7 +33,7 @@
 		</script>
 	</head>
 	<body>
-		<h1><a href="admin.php">Listar Usuários</a></h1>
+		<h1><a href="index.php">Listar Usuários</a></h1>
 		<label>Email</label><input type="text" id="email" name="email"/>
 		<button id="botao" name="botao1">Listar</button>
 		<div id="tabela"></div>

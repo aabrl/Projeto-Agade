@@ -13,7 +13,6 @@ $(function(){
 		
 		uploadFinished:function(i,file,response){
 			$.data(file).addClass('done');
-			$.data(file).m
 			// response is the JSON object that post_file.php returns
 		},
 		

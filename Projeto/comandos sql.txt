@@ -3,7 +3,7 @@ create table usuarios(
     foto oid,
     nome char(70)
     email varchar(50),
-    senha varchar(20)
+    senha varchar(40)
     )
 
 insert into usuarios(email,senha) values ('carol@hotmail.com', 'carol');

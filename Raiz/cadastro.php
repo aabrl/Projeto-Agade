@@ -8,7 +8,7 @@
 	</head>
 	
 	<body>
-		<h1><a href="admin.php">Cadastro de Usuários</a></h1>
+		<h1><a href="index.html">Cadastro de Usuários</a></h1>
 		<h3>Preencha os campos abaixo corretamente.</h3>
 		<!--h4>Os campos marcados com * são obrigatórios.</h4-->
 		<table>
@@ -17,8 +17,11 @@
 				<td><input type="text" name="nome" id="nome" size="70" maxlength="70"/></td>
 				<td rowspan="4">
 					<div id="dropbox">
-						<span class="message">Arraste aqui a sua foto. <br /><i>(Ela só fica visível para você)</i></span>
+						<span class="message">Arraste aqui a sua foto. <br /><i>(Ela só fica visível para você)</i></span>				
 					</div>
+					<!--form method="post" target="dropbox">
+						<input type="file" name="imagem">
+					</form-->
 				</td>
 			</tr>
 			<tr>

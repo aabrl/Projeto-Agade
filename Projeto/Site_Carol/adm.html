@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Adm</title>
+		<!--Scripts-->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	</head>
+
+	<!--Só executa quando a página carrega toda: equivalente a $(document).ready(function(){});-->
+	<script>
+		$(function() {
+        	$("#barra").buttonset(); //seta estilo dos botões
+    	});
+	</script>
+
+	<body>
+		<h1 style="font-family: verdana">A D M</h1>
+		<div id="barra">
+			<!--Redireciona as pags correspondentes-->
+			<a href="login.html" style="font-family: verdana">Login</a>
+			<a href="cadastro.php" style="font-family: verdana">Cadastrar</a>
+			<a href="edicao.php" style="font-family: verdana">Editar</a>
+			<a href="lista.php" style="font-family: verdana">Listar</a>
+			<a href="exclusao.php" style="font-family: verdana">Excluir</a>
+		</div>
+	</body>
+</html>
