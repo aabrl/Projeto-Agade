@@ -17,13 +17,16 @@
 		$resultado = pg_query($insere) or die('Query failed: ' . pg_last_error());
 		#RECUPERANDO ID PRA RENOMEAR A FOTO
 		$pesquisaid = "SELECT id FROM usuarios WHERE email = '$email'";
+		/*$insert_query = pg_query($conexao, "SELECT lastval()");
+		$id = pg_fetch_row($insert_query);
+		return $id[0];*/
 		$resultado = pg_query($pesquisaid) or die('Query failed: ' . pg_last_error());
 		while ($linha = pg_fetch_array($resultado)) {
 			$id = $linha['id'];
 		}
 		pg_close($link);
 		rename($localfoto.$nomefoto, $localfoto.$id.".jpg");
-		$ok = "Usuário ".$nome." cadastrado com sucesso! O arquivo ".$nomefoto." foi enviado com sucesso para o diretório ".$localfoto."!";
+		$ok = "Usuário ".$nome." cadastrado com sucesso!";
 		echo json_encode($ok, JSON_NUMERIC_CHECK);
 	}
 ?>

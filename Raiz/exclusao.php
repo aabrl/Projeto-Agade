@@ -3,7 +3,7 @@
 	<head>
 		<title>Admininistração</title>
 		<script src="javascript/jquery-3.2.1.js"></script>
-
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script>
 			$(document).on('click',"#botao",function()
 			{
@@ -34,10 +34,10 @@
 			{
 			    console.log(data);
 			    console.log(data[0].email);
-			    var s = "</BR><table border=1 align=center><tr><th>ID</th><th>NOME</th><th>E-MAIL</th></tr>";
+			    var s = "</BR><table class='lista' border=1 align=center><tr><th>NOME</th><th>E-MAIL</th></tr>";
 			    for (var i = 0; i < data.length; i++)
 			    {
-			    	s += "<tr><td>"+data[i].id+"</td><td>"+data[i].nome+"</td><td>"+data[i].email+"</td></tr>";
+			    	s += "<tr><td>"+data[i].nome+"</td><td>"+data[i].email+"</td></tr>";
 			    }
 			    s +="</table>";
 			    $("#tabela").html(s);
@@ -51,10 +51,12 @@
 		</script>
 	</head>
 	<body>
-		<h1><a href="index.html">Consulta/Exclusão de Usuários</a></h1>
-		<p><label>Email</label>
-		<input type="text" name="email" id="email" /></p>
-		<p><button id="botao">Excluir</button><button id="botao2">Listar</button></p>
-		<div id="tabela"></div>
+		<section class="container3">
+			<h1 align="center"><a id="home" href="index.html">Consulta/Exclusão de Usuários</a></h1>
+			<p align="center"><label>Email</label>
+			<input type="text" name="email" id="email" /></p>
+			<p align="center"><button id="botao">Excluir</button><button id="botao2">Listar</button></p>
+			<div id="tabela"></div>
+		</section>
 	</body>
 </html>
