@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<meta charset="utf-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<!--script type="text/javascript" src="verificCookie.js"></script-->
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	</head>
+	<script>
+	    $(function() {
+	        $( "#barra" ).buttonset();
+	    });
+	</script>
+	<body>
+		<div class="container">
+			<form method="POST" action="sessao.php">
+				<table align="center">
+					<tr><h2 align="center">LOGIN DE USUÁRIO</h2></tr>
+					<tr>
+						<td>Email:</td>
+						<td><input type="text" id="email" name="email" size="40" maxlength="40"></td>
+					</tr>
+					<tr>
+						<td>Senha:</td>
+						<td><input type="password" id="senha" name="senha" size="40" maxlength="40"></td>
+					</tr>
+					<tr><td><br></td></tr>
+					<tr>
+						<td></td><td><input type="submit" name="Entrar"></td>
+					</tr>
+					<tr><td><br></td></tr>
+					<tr>
+						<td colspan="2" id="barra">
+							<a href="cadastro.php"> Cadastre-se</a>
+							<a href="esqueciSenha.html">Esqueci a senha</a>
+							<a href="index.html">Voltar</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<!--É ONDE FAZ A CHECAGEM DO COOKIE
+		<?php
+			//se estiver logado:
+			//CHECAGEM SE TEM COOKIE ATIVO:
+			if (count($_COOKIE)>1) { #se o array de COOKIES existir, será > 1
+					echo "
+					 	
+					 		parent.location = 'sessao.php';
+					 	";
+				}
+			//se não estiver logado
+			//SE NÃO TIVER COOKIE ATIVO:
+			/*} else { #se ele não tiver sido criado ainda, ou seja, o usuário ainda não tinha feito login nesse pc
+				//já que ele nao foi habilitado, deve ser feito um cookie que guarde as infos do usuario aqui e a sessão é criada
+				echo "
+					<script>
+						alert('Cookies desabilitados!');
+					</script>";
+				#setcookie("name","value","expiration");
+				setcookie('email',$email,time()+2592000); #time: 1 mês (30 dias)
+			}*/
+		?>-->
+	</body>
+</html>

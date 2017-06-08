@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<meta charset="utf-8">
+ 		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<script type="text/javascript" src="verificCookie.js"></script>
+	</head>
+
+	<body>
+		<div 
+			class="container" 
+			style="color: white; position: absolute; left: 35%; margin-left: center; width: 450px; height: 260px; background: black; border: 2px solid black">
+			<form 
+				method="POST" 
+				action="sessao.php" 
+				style="font-family: verdana">
+				<!---->
+				<h2>LOGIN DE USUÁRIO</h2>
+				<p>Email: <input type="text" id="email" name="email"></p>
+				<p>Senha: <input type="password" id="senha" name="senha"></p>
+				<input type="submit" name="Entrar">
+				<p>Não tem cadastro? <a href="cadastro.php"> Cadastre-se</a></p>
+				<p><a href="esqueciSenha.html">Esqueci a senha</a></p>
+				<br>
+				<p><a href="adm.html">Voltar</a></p>
+			</form>
+		</div>
+
+		<!--É ONDE FAZ A CHECAGEM DO COOKIE
+		<?php
+			//se estiver logado:
+			//CHECAGEM SE TEM COOKIE ATIVO:
+			if (count($_COOKIE)>1) { #se o array de COOKIES existir, será > 1
+					echo "
+					 	
+					 		parent.location = 'sessao.php';
+					 	";
+				}
+			//se não estiver logado
+			//SE NÃO TIVER COOKIE ATIVO:
+			/*} else { #se ele não tiver sido criado ainda, ou seja, o usuário ainda não tinha feito login nesse pc
+				//já que ele nao foi habilitado, deve ser feito um cookie que guarde as infos do usuario aqui e a sessão é criada
+				echo "
+					<script>
+						alert('Cookies desabilitados!');
+					</script>";
+				#setcookie("name","value","expiration");
+				setcookie('email',$email,time()+2592000); #time: 1 mês (30 dias)
+			}*/
+		?>-->
+	</body>
+</html>

@@ -1,0 +1,59 @@
+.container {
+	color: white;
+	position: absolute;
+	left: 35%;
+	margin-left: center;
+	width: 450px;
+	height: 280px;
+	background: black;
+	border: 2px solid black;
+	font-family: verdana;
+}
+
+.container2 {
+	color: white;
+	position: absolute;
+	left: 33%;
+	margin-left: center;
+	width: 600px;
+	height: 180px;
+	background: black;
+	border: 2px solid black;
+	font-family: verdana;
+}
+
+.container3 {
+	color: white;
+	position: absolute;
+	left: 33%;
+	margin-left: center;
+	width: 500px;
+	height: 150px;
+	background: black;
+	border: 2px solid black;
+	font-family: verdana;
+}
+
+.lista {
+	color: black;
+}
+
+#home {
+	color:white;
+}
+
+.container4 {
+	position: absolute;
+	left: 33%;
+	margin-left: center;
+	width: 600px;
+	height: 380px;
+	background: black;
+	border: 2px solid black;
+	font-family: verdana;
+}
+
+.dados {
+	color: white;
+}
+

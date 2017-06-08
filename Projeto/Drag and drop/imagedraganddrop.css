@@ -1,0 +1,7 @@
+#example-content { text-align: center; }
+
+#frame { background-color: #000; color: #fff; margin: 10px; width: 150px; height: 150px; padding: 10px; }
+
+#image-area {width: 100%; border: 1px dotted #fff; padding-top: 37%; padding-bottom: 37%; margin-bottom: 15px; overflow:hidden; }
+
+.hover { border: 1px solid #fff !important; }

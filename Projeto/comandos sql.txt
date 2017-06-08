@@ -1,6 +1,8 @@
 create table usuarios(
     id serial,
-    email varchar(40),
+    foto oid,
+    nome char(70)
+    email varchar(50),
     senha varchar(40)
     )
 
